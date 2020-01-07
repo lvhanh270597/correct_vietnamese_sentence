@@ -1,12 +1,13 @@
 # Correct Vietnamese Sentence tool
-## Description: Adding accents vietnamese sentence tool
+## Description
+* Adding accents vietnamese sentence tool
 
 ## Intsallation
 <code> pip install vicorrect</code>
 
 ## Examples:
-<code>
-from vicorrect.model import CorrectVietnameseSentence
+```python
+from vicorrect.model import CorrectVietnameseSentence <code>
 
 dataset = """
 trời buồn trời đổ cơn mưa
@@ -22,6 +23,6 @@ testcase = [
 ]
 
 print(corrector.predict(testcase))
-</code>
+```
 ## Author
 **Hanh. Le Van**
