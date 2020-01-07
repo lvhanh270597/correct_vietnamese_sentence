@@ -1,8 +1,27 @@
 # Correct Vietnamese Sentence tool
-* Description: Adding accents vietnamese sentence tool
-* Examples:
-hom qua em đến truong ==> hôm qua em đến trường (26.334286 (ms)
-ngay xua em den nhu mot cơn gio ==> ngày xưa em đến như một cơn gió (20.843744 (ms))
-anh khong con yeu toi nua sao ==> anh không còn yêu tôi nữa sao (12.449741 (ms))
-anh di chet di ==> anh đi chết đi
-* Author: Hanh. Le Van
+## Description: Adding accents vietnamese sentence tool
+
+## Intsallation
+<code> pip install vicorrect</code>
+
+## Examples:
+<code>
+from vicorrect.model import CorrectVietnameseSentence
+
+dataset = """
+trời buồn trời đổ cơn mưa
+chim khôn chim đậu cành đa"""
+
+corrector = CorrectVietnameseSentence(verbose=False)
+corrector.fit(dataset.splitlines())
+
+testcase = [
+    "troi buon",
+    "com chim dau",
+    "chim dau canh da troi do mua"
+]
+
+print(corrector.predict(testcase))
+</code>
+## Author
+**Hanh. Le Van**
