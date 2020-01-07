@@ -7,7 +7,7 @@
 
 ## Examples:
 ```python
-from vicorrect.model import CorrectVietnameseSentence <code>
+from vicorrect.model import CorrectVietnameseSentence
 
 dataset = """
 trời buồn trời đổ cơn mưa
