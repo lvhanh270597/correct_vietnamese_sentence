@@ -94,11 +94,13 @@ class Sentence():
 		return re.sub(r'(\d+)|([wjfz]+)', '', word)
 	def check_has_accent(self, input_str):
 		return (input_str != self.remove_accents(input_str))
-	def remove_accents(self, input_str):
+	def remove_accents(self):
+		input_str = self.sentence
 		s = ''
 		for c in input_str:
 			if c in self.s1:
 				s += self.s0[self.s1.index(c)]
 			else:
 				s += c
-		return s
+		self.sentence = s
+		return self.sentence

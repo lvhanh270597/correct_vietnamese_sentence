@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="vicorrect",
-    version="0.0.1",
+    version="0.0.4",
     author="Hanh.Le Van",
     author_email="lvhanh.270597@gmail.com",
     description="Helpful tool to guess correct vietnamese sentence",
@@ -14,7 +14,8 @@ setuptools.setup(
     url="https://github.com/lvhanh270597/correct_vietnamese_sentence",
     packages=setuptools.find_packages(),
     install_requires=[
-        'nltk'
+        'nltk',
+        'faiss'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

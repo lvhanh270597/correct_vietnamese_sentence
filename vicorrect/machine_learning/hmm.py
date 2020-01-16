@@ -68,7 +68,7 @@ class HiddenMarkovModel():
 			return tuple([tuple([w]) for w in self.__getListSim(words[-1])])
 		cur_word = words[-1]
 		# if has accent then not neccessary to guess
-		if cur_word != Sentence().remove_accents(cur_word):
+		if cur_word != Sentence(cur_word).remove_accents():
 			if cur_word in self.__index:
 				cur_simwords = {self.__index[cur_word]}
 			else:
@@ -103,7 +103,7 @@ class HiddenMarkovModel():
 			return tuple([tuple([w]) for w in self.__getListSim(words[0])])
 		cur_word = words[0]
 		# if has accent then not neccessary to guess
-		if cur_word != Sentence().remove_accents(cur_word):
+		if cur_word != Sentence(cur_word).remove_accents():
 			if cur_word in self.index:
 				cur_simwords = {self.__index[cur_word]}
 			else:
@@ -202,7 +202,7 @@ class HiddenMarkovModel():
 			self.__prop[1][index] = 0			
 		######################################################		
 		if self.__verbose:
-			print('Done!')		
+			print('Done!')	
 		if self.__verbose:
 			print('Extract similar non-accent words')		
 		cnt, full_size = 1, len(self.__index)
@@ -211,7 +211,7 @@ class HiddenMarkovModel():
 			if self.__verbose:
 				print('Processing at %d/%d (%.2f)' %(cnt, full_size, (cnt / full_size) * 100))
 			index = self.__index[word]
-			non_accent = Sentence().remove_accents(word)
+			non_accent = Sentence(word).remove_accents()
 			if non_accent not in self.__simwords:
 				self.__simwords[non_accent] = {index}
 			else:
