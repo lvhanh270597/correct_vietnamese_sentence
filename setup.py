@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="vicorrect",
-    version="0.0.4",
+    version="0.0.7",
     author="Hanh.Le Van",
     author_email="lvhanh.270597@gmail.com",
     description="Helpful tool to guess correct vietnamese sentence",

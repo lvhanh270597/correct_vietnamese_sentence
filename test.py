@@ -17,6 +17,6 @@ print(corrector.predict(testcase))
 
 from vicorrect.model import CorrectWord
 
-s = "duongf"
+s = "tốt"
 c = CorrectWord("/home/hanhlv/mychat/data/vocab/vocab.txt")
 print(c.predict(s))

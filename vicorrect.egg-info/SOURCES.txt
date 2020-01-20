@@ -14,6 +14,9 @@ vicorrect/datastructures/prefixtree.py
 vicorrect/datastructures/sentence.py
 vicorrect/datastructures/specialdict.py
 vicorrect/datastructures/trie.py
+vicorrect/helper/__init__.py
+vicorrect/helper/fileman.py
+vicorrect/helper/telex.py
 vicorrect/machine_learning/__init__.py
 vicorrect/machine_learning/hmm.py
 vicorrect/model/__init__.py

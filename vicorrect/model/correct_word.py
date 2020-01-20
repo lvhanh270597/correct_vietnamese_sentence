@@ -12,6 +12,10 @@ class CorrectWord:
         self.searchInit()
 
     def predict(self, word, size=1):
+        nWord = Sentence(word).remove_accents()
+        if word != nWord: return [(
+            word, nWord, word, 0
+        )]
         words = Telex(word).invert()
         scores = []
         for word in words:
@@ -44,8 +48,8 @@ class CorrectWord:
         D, I = self.indexer.search(xq, nRetrieval)
         D, I = D[0], I[0]
         endIndex = nRetrieval
-        # for endIndex in range(1, nRetrieval):
-        #     if D[endIndex] != D[endIndex - 1]: break
+        for endIndex in range(1, nRetrieval):
+            if D[endIndex] != D[endIndex - 1]: break
         results = []
         for i in range(endIndex):
             results.append((
